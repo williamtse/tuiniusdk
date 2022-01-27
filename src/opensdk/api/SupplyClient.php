@@ -8,8 +8,6 @@
 
 namespace xingdian\opensdk\api;
 
-use think\Cache;
-use think\Log;
 use xingdian\opensdk\api\core\ClientException;
 use xingdian\opensdk\api\core\Base;
 use xingdian\opensdk\api\http\RequestClint;
@@ -57,21 +55,17 @@ class SupplyClient extends Base
 
     public function getAccessToken()
     {
-        $key = 'open:access_token';
-        $token = Cache::store('redis')->get($key);
-        if (!$token) {
-            $serverUrl = RequestClint::richRequest('v2/index/gettoken', $this);
-            $serverUrl .= '?appid=' . $this->app_key . '&appsecret=' . $this->app_secret;
-            $response = RequestClint::curl_request($serverUrl, false);
-            Log::record('获取达人宝access_token:' . $response);
-            //清空请求参数
-            $this->removeAllParam();
-            if ($response) {
-                $obj = json_decode($response);
-                if ($obj->code) {
-                    $token = $obj->data->token;
-                    Cache::store('redis')->set($key, $token, $obj->data->expires_in);
-                }
+        $token = null;
+        $serverUrl = RequestClint::richRequest('v2/index/gettoken', $this);
+        $serverUrl .= '?appid=' . $this->app_key . '&appsecret=' . $this->app_secret;
+        $response = RequestClint::curl_request($serverUrl, false);
+        Log::record('获取达人宝access_token:' . $response);
+        //清空请求参数
+        $this->removeAllParam();
+        if ($response) {
+            $obj = json_decode($response);
+            if ($obj->code) {
+                $token = $obj->data->token;
             }
         }
         return $token;
@@ -79,7 +73,6 @@ class SupplyClient extends Base
 
     public function getApiResponse($method, $action, $params = [], $access_token = '')
     {
-        Log::record('access_token加入参数中：' . $access_token);
         if ($access_token) {
             $this->addParam('token', $access_token);
         }

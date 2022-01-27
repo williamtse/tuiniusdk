@@ -8,7 +8,6 @@
 
 namespace xingdian\opensdk\api\http;
 
-use think\Log;
 use xingdian\opensdk\api\core\Base;
 
 class RequestClint
@@ -153,7 +152,6 @@ class RequestClint
             $str_key .= $k . $v;
         }
         $str_key .= $appsecret;
-        Log::record('set sign:' . $str_key);
         $sign = strtoupper(md5(sha1($str_key)));
 
         return $sign;
