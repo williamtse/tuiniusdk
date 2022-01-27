@@ -12,7 +12,9 @@
             "email": "xwengf@126.com"
         }
     ],
-    "require": {},
+    "require": {
+        "php": ">=7.1.0"
+    },
     "minimum-stability": "dev",
     "license": "Apache-2.0"
 }
