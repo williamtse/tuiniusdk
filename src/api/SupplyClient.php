@@ -59,7 +59,6 @@ class SupplyClient extends Base
         $serverUrl = RequestClint::richRequest('v2/index/gettoken', $this);
         $serverUrl .= '?appid=' . $this->app_key . '&appsecret=' . $this->app_secret;
         $response = RequestClint::curl_request($serverUrl, false);
-        Log::record('获取达人宝access_token:' . $response);
         //清空请求参数
         $this->removeAllParam();
         if ($response) {
