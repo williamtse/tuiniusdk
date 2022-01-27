@@ -1,0 +1,18 @@
+{
+    "name": "tuiniu/tuiniusdk",
+    "description": "sdk for tuiniu user",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Tuiniu\\Tuiniusdk\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "xwengf",
+            "email": "xwengf@126.com"
+        }
+    ],
+    "require": {}
+}
