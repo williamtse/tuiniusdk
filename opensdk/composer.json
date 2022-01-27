@@ -1,0 +1,16 @@
+{
+    "name": "tuiniu/opensdk",
+    "description": "open sdk for tuiniu",
+    "autoload": {
+        "psr-4": {
+            "Tuiniu\\Opensdk\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "xwengf",
+            "email": "xwengf@126.com"
+        }
+    ],
+    "require": {}
+}
