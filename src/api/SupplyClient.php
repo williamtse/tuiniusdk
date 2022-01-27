@@ -6,11 +6,11 @@
  * Time: 2:46 PM
  */
 
-namespace tuiniu\opensdk\api;
+namespace Tuiniu\Opensdk\api;
 
-use tuiniu\opensdk\api\core\ClientException;
-use tuiniu\opensdk\api\core\Base;
-use tuiniu\opensdk\api\http\RequestClint;
+use Tuiniu\Opensdk\api\core\ClientException;
+use Tuiniu\Opensdk\api\core\Base;
+use Tuiniu\Opensdk\api\http\RequestClint;
 
 class SupplyClient extends Base
 {

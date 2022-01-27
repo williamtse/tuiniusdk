@@ -6,9 +6,9 @@
  * Time: 2:14 PM
  */
 
-namespace tuiniu\opensdk\api\http;
+namespace Tuiniu\Opensdk\api\http;
 
-use tuiniu\opensdk\api\core\Base;
+use Tuiniu\Opensdk\api\core\Base;
 
 class RequestClint
 {

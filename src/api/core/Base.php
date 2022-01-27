@@ -6,7 +6,7 @@
  * Time: 2:11 PM
  */
 
-namespace tuiniu\opensdk\api\core;
+namespace Tuiniu\Opensdk\api\core;
 
 class Base
 {
