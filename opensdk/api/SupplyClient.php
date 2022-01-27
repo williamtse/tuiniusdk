@@ -6,11 +6,11 @@
  * Time: 2:46 PM
  */
 
-namespace xingdian\opensdk\api;
+namespace tuiniu\opensdk\api;
 
-use xingdian\opensdk\api\core\ClientException;
-use xingdian\opensdk\api\core\Base;
-use xingdian\opensdk\api\http\RequestClint;
+use tuiniu\opensdk\api\core\ClientException;
+use tuiniu\opensdk\api\core\Base;
+use tuiniu\opensdk\api\http\RequestClint;
 
 class SupplyClient extends Base
 {

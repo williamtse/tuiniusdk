@@ -1,6 +1,6 @@
 <?php
 
-namespace xingdian\opensdk\api\core;
+namespace tuiniu\opensdk\api\core;
 
 /**
  * Class ClientException

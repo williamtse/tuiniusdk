@@ -6,7 +6,7 @@
  * Time: 2:11 PM
  */
 
-namespace xingdian\opensdk\api\core;
+namespace tuiniu\opensdk\api\core;
 
 class Base
 {
