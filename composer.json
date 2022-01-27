@@ -12,5 +12,6 @@
             "email": "xwengf@126.com"
         }
     ],
-    "require": {}
+    "require": {},
+    "minimum-stability": "dev"
 }
