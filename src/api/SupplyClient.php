@@ -62,12 +62,24 @@ class SupplyClient extends Base
         //清空请求参数
         $this->removeAllParam();
         if ($response) {
-            $obj = json_decode($response);
-            if ($obj->code) {
-                $token = $obj->data->token;
-            }
+            $obj = json_decode($response, true);
+            return $obj;
         }
-        return $token;
+    }
+
+    public function refreshToken($refreshToken)
+    {
+        $token = null;
+        $serverUrl = RequestClint::richRequest('v2/index/refresh_token', $this);
+        $serverUrl .= '?appid=' . $this->app_key . '&refresh_token=' . $refreshToken;
+        $response = RequestClint::curl_request($serverUrl, false);
+        //清空请求参数
+        $this->removeAllParam();
+        if ($response) {
+            $obj = json_decode($response, true);
+            return $obj;
+        }
+        return null;
     }
 
     public function getApiResponse($method, $action, $params = [], $access_token = '')
