@@ -64,7 +64,7 @@ class SupplyClient extends Base
         if ($response) {
             $obj = json_decode($response, true);
             return $obj;
-        }
+        }:
     }
 
     public function refreshToken($refreshToken)
